@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "ggyaal",
   "license": "ISC",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "express": "^4.17.1"
   }
