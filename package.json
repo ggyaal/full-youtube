@@ -6,9 +6,15 @@
   "author": "ggyaal",
   "license": "ISC",
   "scripts": {
-    "start": "node index.js"
+    "dev": "nodemon --exec babel-node index.js"
   },
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/node": "^7.13.13",
+    "@babel/preset-env": "^7.14.1",
+    "nodemon": "^2.0.7"
   }
 }
