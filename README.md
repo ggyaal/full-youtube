@@ -15,7 +15,7 @@ Cloning Youtube with Vanila and nodeJS
 2. users - /users/:id
 
    - [ ] profile - /
-   - [ ] update - /update
+   - [ ] edit - /edit
    - [ ] delete - /delete
 
 3. videos - /videos/:id
