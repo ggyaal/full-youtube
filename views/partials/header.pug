@@ -1,10 +1,14 @@
 header.header
     .header__column
         a(href=routes.home)
-            i.fab.fa-youtube
+            span.header__logo
+                i.fab.fa-youtube
+            span.header__title GgyaalTube
     .header__column
         form(action=routes.search, method="get")
             input(type="text", placeholder="Search by term...", name="term")
+            button
+                i.fas.fa-search
     .header__column
         ul
             if !user.isAuthenticated

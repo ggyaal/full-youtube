@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+header {
+  background-color: $black;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  align-items: center;
+  padding: 10px 20px;
+  .header__column {
+    &:first-child {
+      font-size: 20px;
+
+      .header__logo {
+        color: $red;
+        margin-right: 5px;
+      }
+      .header__title {
+        color: $white;
+        font-family: "Anton", sans-serif;
+      }
+    }
+    &:nth-child(2) {
+      justify-self: center;
+      color: $white;
+      width: 80%;
+    }
+    &:last-child {
+      justify-self: end;
+    }
+    ul {
+      display: flex;
+      font-weight: 600;
+      text-transform: uppercase;
+      li:not(:last-child) {
+        margin-right: 15px;
+      }
+      a {
+        color: $white;
+      }
+    }
+    form {
+      width: 100%;
+      display: flex;
+      background-color: $silver;
+      padding: 2px;
+      input {
+        padding: 7px 10px;
+        width: 100%;
+        border-radius: 5px;
+        font-size: 14px;
+        color: $white;
+        font-weight: 600;
+        background-color: $deepGray;
+        &::placeholder {
+          font-weight: 300;
+          color: $gray;
+        }
+      }
+      button {
+        background: none;
+        color: $gray;
+        padding: 0 20px;
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -1,5 +1,3 @@
-@import "config/variables";
-
-body {
-  background-color: $bgColor;
-}
+@import "config/reset";
+@import "config/_variables";
+@import "partials/header";
