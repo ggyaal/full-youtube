@@ -103,9 +103,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scs
   !*** ./assets/scss/styles.scss ***!
   \*********************************/
 /*! no exports provided */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("throw new Error(\"Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/lib/loader.js):\\n\\n@import \\\"pages/videoDetail.scss\\\";\\n^\\n      File to import not found or unreadable: pages/videoDetail.scss.\\n      in /Users/hoon/ggyaal_2021/nomad-coders/full-youtube/assets/scss/styles.scss (line 12, column 1)\\n    at /Users/hoon/ggyaal_2021/nomad-coders/full-youtube/node_modules/webpack/lib/NormalModule.js:316:20\\n    at /Users/hoon/ggyaal_2021/nomad-coders/full-youtube/node_modules/loader-runner/lib/LoaderRunner.js:367:11\\n    at /Users/hoon/ggyaal_2021/nomad-coders/full-youtube/node_modules/loader-runner/lib/LoaderRunner.js:233:18\\n    at context.callback (/Users/hoon/ggyaal_2021/nomad-coders/full-youtube/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\\n    at Object.callback (/Users/hoon/ggyaal_2021/nomad-coders/full-youtube/node_modules/sass-loader/lib/loader.js:52:13)\\n    at Object.done [as callback] (/Users/hoon/ggyaal_2021/nomad-coders/full-youtube/node_modules/neo-async/async.js:8069:18)\\n    at options.error (/Users/hoon/ggyaal_2021/nomad-coders/full-youtube/node_modules/node-sass/lib/index.js:294:32)\");\n\n//# sourceURL=webpack:///./assets/scss/styles.scss?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./assets/scss/styles.scss?");
 
 /***/ }),
 
