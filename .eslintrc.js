@@ -12,5 +12,6 @@ module.exports = {
   rules: {
     "prettier/prettier": "off",
     "no-console": "off",
+    camelcase: "off",
   },
 };
