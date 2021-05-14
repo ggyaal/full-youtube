@@ -13,10 +13,15 @@ const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
 const ME = "/me";
 
-// github
+// Github
 
 const GITHUB = "/auth/github";
 const GITHUB_CALLBACK = "/auth/github/callback";
+
+// Facebook
+
+const FACEBOOK = "/auth/facebook";
+const FACEBOOK_CALLBACK = "/auth/facebook/callback";
 
 // Videos
 
@@ -64,6 +69,8 @@ const routes = {
   github: GITHUB,
   githubCallback: GITHUB_CALLBACK,
   me: ME,
+  facebook: FACEBOOK,
+  facebookCallback: FACEBOOK_CALLBACK,
 };
 
 export default routes;

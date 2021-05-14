@@ -3,11 +3,13 @@ import passport from "passport";
 import routes from "../routes";
 import { home, search } from "../controllers/videoController";
 import {
+  facebookLogin,
   getJoin,
   getLogin,
   getMe,
   githubLogin,
   logout,
+  postFacebookLogin,
   postGithubLogin,
   postJoin,
   postLogin,
@@ -37,5 +39,14 @@ globalRouter.get(
 );
 
 globalRouter.get(routes.me, getMe);
+
+globalRouter.get(routes.facebook, facebookLogin);
+globalRouter.get(
+  routes.facebookCallback,
+  passport.authenticate("facebook", {
+    failureRedirect: routes.home,
+  }),
+  postFacebookLogin
+);
 
 export default globalRouter;
