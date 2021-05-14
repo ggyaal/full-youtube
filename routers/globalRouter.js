@@ -5,6 +5,7 @@ import { home, search } from "../controllers/videoController";
 import {
   getJoin,
   getLogin,
+  getMe,
   githubLogin,
   logout,
   postGithubLogin,
@@ -34,5 +35,7 @@ globalRouter.get(
   }),
   postGithubLogin
 );
+
+globalRouter.get(routes.me, getMe);
 
 export default globalRouter;
