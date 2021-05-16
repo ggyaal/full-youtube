@@ -25,6 +25,7 @@
     "dotenv": "^8.5.1",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "get-blob-duration": "^1.2.0",
     "helmet": "^4.6.0",
     "mongoose": "^5.12.7",
     "morgan": "^1.10.0",
