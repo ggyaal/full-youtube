@@ -2,10 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  .video__player {
-    video {
-      width: 100%;
-    }
+  video {
+    width: 100%;
   }
   .video__info {
     width: 100%;
