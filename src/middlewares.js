@@ -1,0 +1,6 @@
+export const localsware = (req, res, next) => {
+    res.locals.loggedIn = Boolean(req.session.loggedIn);
+    res.locals.siteName = "ggyaaltube";
+    res.locals.loggedUser = req.session.user;
+    next();
+}

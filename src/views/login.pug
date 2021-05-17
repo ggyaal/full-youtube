@@ -2,3 +2,9 @@ extends layouts/main
 
 block main
     h1 login
+    if err
+        span=err
+    form(method="POST")
+        input(type="text", name="email", placeholder="Email")
+        input(type="password", name="password", placeholder="Password")
+        input(type="submit", value="Log In")

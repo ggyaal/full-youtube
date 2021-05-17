@@ -1,4 +1,11 @@
 extends layouts/main
 
 block main
-    h1 join
+    if err
+        span=err
+    form(method="POST")
+        input(type="email", name="email", placeholder="Email")
+        input(type="text", name="name", placeholder="Name")
+        input(type="password", name="password", placeholder="Password")
+        input(type="password", name="password1", placeholder="Confirm password")
+        input(type="submit", value="Join now")

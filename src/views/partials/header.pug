@@ -3,8 +3,17 @@ header
         span GgyaalTube
     .header-column
         ul
-            li 
-                a(href="") login
+            if loggedIn
+                li 
+                    a(href="/logout") logout
+                li 
+                    a(href=`/users/${loggedUser.id}`) profile
+            else
+                li 
+                    a(href="/join") Join
+                li 
+                    a(href="/login") login
+
             li 
                 a(href="") menu
             li 
