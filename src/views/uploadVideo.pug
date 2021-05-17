@@ -1,4 +1,9 @@
 extends layouts/main
 
 block main
-    h1 uploaded video 
+    h1 uploaded video
+    form(method="POST")
+        input(type="text", name="fileUrl", placeholder="fileUrl", required)
+        input(type="text", name="title", placeholder="title", required)
+        input(type="text", name="description", placeholder="description")
+        input(type="submit", value="upload")
