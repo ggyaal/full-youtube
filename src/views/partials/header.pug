@@ -3,9 +3,18 @@ header
         span GgyaalTube
     .header-column
         ul
-            li 
-                a(href="") login
+            if loggedIn
+                li 
+                    a(href=routes.LOGOUT) logout
+                li 
+                    a(href=`/users/${loggedUser.id}`) profile
+            else
+                li 
+                    a(href=routes.JOIN) Join
+                li 
+                    a(href=routes.LOGIN) login
+
             li 
                 a(href="") menu
             li 
-                a(href="/videos/upload") upload
+                a(href=`/videos/${routes.UPLOAD_VIDEO}`) upload
