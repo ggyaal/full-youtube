@@ -6,12 +6,16 @@ import {
   view,
   postUploadVideo,
 } from "../controllers/videoController";
+import routes from "../routes";
 
 const videoRouter = express.Router();
 
-videoRouter.get("/:id([0-9a-f]{24})", view);
-videoRouter.get("/:id([0-9a-f]{24})/update", updateVideo);
-videoRouter.get("/:id([0-9a-f]{24})/delete", deleteVideo);
-videoRouter.route("/upload").get(getUploadVideo).post(postUploadVideo);
+videoRouter.get(routes.VIEW, view);
+videoRouter.get(routes.UPDATE_VIDEO, updateVideo);
+videoRouter.get(routes.DELETE_VIDEO, deleteVideo);
+videoRouter
+  .route(routes.UPDATE_VIDEO)
+  .get(getUploadVideo)
+  .post(postUploadVideo);
 
 export default videoRouter;
