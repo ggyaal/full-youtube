@@ -2,7 +2,9 @@ doctype html
 html(lang="ko")
     head
         title #{siteName}
+        link(rel="stylesheet", href="/static/css/styles.css")
     body
         include ../partials/header
         block main
         include ../partials/footer
+        script(src="/static/js/main.js") 
