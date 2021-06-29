@@ -132,6 +132,14 @@ export const githubCallback = async (req, res) => {
   }
 };
 
-export const user = (req, res) => res.render("user");
+export const user = async (req, res) => {
+  const {
+    params: { id },
+  } = req;
+
+  const user = await User.findById(id);
+
+  return res.render("user", { user });
+};
 export const edit = (req, res) => res.render("edit");
 export const remove = (req, res) => res.render("delete");

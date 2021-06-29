@@ -26,5 +26,4 @@ export const postUploadVideo = async (req, res) => {
   }
 };
 
-export const updateVideo = (req, res) => res.render("updateVideo");
 export const deleteVideo = (req, res) => res.render("deleteVideo");

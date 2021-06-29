@@ -16,14 +16,18 @@ app.set("views", process.cwd() + "/src/views");
 app.use(logger);
 app.use(express.urlencoded({ extended: true }));
 
-app.use(session({
+app.use(
+  session({
     secret: process.env.COOKIE_SECRET,
     resave: false,
     saveUninitialized: false,
-    store: mongoStore.create({ mongoUrl: process.env.MONGO_URL})
-}));
+    store: mongoStore.create({ mongoUrl: process.env.MONGO_URL }),
+  })
+);
 
 app.use(localsware);
+
+app.use("/static", express.static("static"));
 
 app.use("/", rootRouter);
 app.use("/users", userRouter);
