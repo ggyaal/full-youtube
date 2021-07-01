@@ -40,11 +40,13 @@ export const postJoin = async (req, res) => {
   if (password !== password1) {
     return res.render("join", { err: "password do not match" });
   } else {
-    await User.create({
+    const user = await User.create({
       email,
       name,
       password,
     });
+    req.session.loggedIn = true;
+    req.session.user = user;
     return res.redirect(routes.HOME);
   }
 };

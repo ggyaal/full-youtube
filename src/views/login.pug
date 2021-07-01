@@ -1,12 +1,17 @@
 extends layouts/main
 
 block main
-    h1 login
     if err
         span=err
-    form(method="POST")
-        input(type="text", name="email", placeholder="Email")
-        input(type="password", name="password", placeholder="Password")
-        input(type="submit", value="Log In")
-    br
-    a(href=`/users/${routes.GITHUB_AUTH}`) continue with github &rarr;
+    .login-container
+        .login-wrapper
+            form(method="POST")
+                input(type="text", name="email", placeholder="Email")
+                input(type="password", name="password", placeholder="Password")
+                button 로그인
+            br
+            a(href=`/users/${routes.GITHUB_AUTH}`).github-login
+                i.fab.fa-github-alt
+                span 깃허브로 로그인하기 &rarr;
+            br
+            a(href=routes.JOIN).join_login 회원가입 &rarr;

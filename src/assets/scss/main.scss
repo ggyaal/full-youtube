@@ -2,7 +2,13 @@
 @import "./config/variables";
 
 @import "./partials/header";
+@import "./partials/side";
+
+@import "./screens/home";
+@import "./screens/login";
 
 body {
+  display: grid;
+  grid-template-columns: max-content 1fr;
   background-color: $bgColor;
 }

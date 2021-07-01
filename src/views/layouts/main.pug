@@ -4,8 +4,10 @@ html(lang="ko")
         title #{siteName}
         link(rel="stylesheet", href="/static/css/styles.css")
     body
-        include ../partials/header
-        block main
-        include ../partials/footer
+        include ../partials/side
+        main
+            include ../partials/header
+            block main
+            include ../partials/footer
         script(src="/static/js/main.js")
         script(src="https://kit.fontawesome.com/673781d7c3.js", crossorigin="anonymous")
