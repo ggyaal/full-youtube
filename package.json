@@ -6,9 +6,8 @@
   "author": "ggyaal",
   "license": "ISC",
   "scripts": {
-    "dev": "nodemon --exec babel-node src/index.js",
-    "assets": "webpack --config webpack.config.js",
-    "preassets": "rm -rf static"
+    "dev:server": "nodemon",
+    "dev:assets": "webpack"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",

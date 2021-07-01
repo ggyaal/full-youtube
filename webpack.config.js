@@ -4,9 +4,11 @@ const path = require("path");
 module.exports = {
   entry: "./src/assets/js/main.js",
   mode: "development",
+  watch: true,
   output: {
     filename: "js/main.js",
     path: path.resolve(__dirname, "static"),
+    clean: true,
   },
   plugins: [
     new MiniCssExtractPlugin({

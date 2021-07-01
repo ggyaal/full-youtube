@@ -1,20 +1,36 @@
 header
     .header-column
-        span GgyaalTube
+        a(href=routes.HOME).header-logo
+            span.header-logo_logo
+                i.fab.fa-youtube
+            span.header-logo_text GgyaalTube
+    .header-column
+        form.searchBox
+            input(type="text", placeholder="검색")
+            button
+                i.fas.fa-search
     .header-column
         ul
             if loggedIn
                 li 
-                    a(href=routes.LOGOUT) logout
+                    a(href=`/videos${routes.UPLOAD_VIDEO}`)
+                        i.fas.fa-video.header-icons
                 li 
-                    a(href=`/users${routes.PROFILE(loggedUser._id)}`) profile
+                    a(href=`/users${routes.PROFILE(loggedUser._id)}`).header-profile.header-icons
+                        .profile-img
+                            if loggedUser.avatar
+                                    img(src=loggedUser.avatar)
+                            else
+                                span=loggedUser.name.substring(0, 1)
             else
                 li 
-                    a(href=routes.JOIN) Join
-                li 
-                    a(href=routes.LOGIN) login
-
-            li 
-                a(href="") menu
-            li 
-                a(href=`/videos${routes.UPLOAD_VIDEO}`) upload
+                    button.header-menu
+                        i.fas.fa-ellipsis-v.header-icons
+                li
+                    a(href=routes.LOGIN)
+                        .login-btn
+                            i.fas.fa-user-circle
+                            | 로그인
+                //-     a(href=routes.JOIN) Join
+                //- li 
+                //-     a(href=routes.LOGIN) login

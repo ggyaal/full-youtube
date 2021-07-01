@@ -12,7 +12,7 @@ const videoRouter = express.Router();
 videoRouter.get(routes.VIEW(), view);
 videoRouter.get(routes.DELETE_VIDEO(), deleteVideo);
 videoRouter
-  .route(routes.UPDATE_VIDEO())
+  .route(routes.UPLOAD_VIDEO)
   .get(getUploadVideo)
   .post(postUploadVideo);
 
