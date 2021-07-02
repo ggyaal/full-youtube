@@ -1,10 +1,10 @@
 extends layouts/main
 
 block main
-    if err
-        span=err
     .login-container
         .login-wrapper
+            if err
+                .login-err=err
             form(method="POST")
                 input(type="email", name="email", placeholder="Email")
                 input(type="text", name="name", placeholder="Name")

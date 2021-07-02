@@ -12,11 +12,15 @@ export const postLogin = async (req, res) => {
   try {
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(400).render("login", { err: "Not found user" });
+      return res
+        .status(400)
+        .render("login", { err: "가입된 이메일이 아닙니다." });
     }
     const ok = await bcrypt.compare(password, user.password);
     if (!ok) {
-      return res.status(400).render("login", { err: "password is incorrect" });
+      return res
+        .status(400)
+        .render("login", { err: "비밀번호가 틀렸습니다.." });
     }
     req.session.loggedIn = true;
     req.session.user = user;
@@ -37,8 +41,13 @@ export const postJoin = async (req, res) => {
   const {
     body: { email, name, password, password1 },
   } = req;
-  if (password !== password1) {
-    return res.render("join", { err: "password do not match" });
+
+  const existedUser = await User.findOne({ email });
+
+  if (existedUser) {
+    return res.render("join", { err: "이미 가입된 이메일입니다!" });
+  } else if (password !== password1) {
+    return res.render("join", { err: "두 비밀번호가 일치하지 않습니다." });
   } else {
     const user = await User.create({
       email,

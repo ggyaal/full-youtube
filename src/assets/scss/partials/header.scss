@@ -80,6 +80,7 @@ header {
       }
     }
     ul {
+      position: relative;
       margin-left: auto;
       display: flex;
       justify-content: end;
@@ -92,8 +93,19 @@ header {
       .header-profile {
         display: flex;
         .profile-img {
+          img {
+            height: 35px;
+          }
           width: 35px;
           height: 35px;
+          &.big {
+            img {
+              height: 45px;
+            }
+            width: 45px;
+            height: 45px;
+            font-size: 30px;
+          }
           display: flex;
           justify-content: center;
           align-items: center;
@@ -101,9 +113,6 @@ header {
           border-radius: 50%;
           background-color: $blue;
           font-size: 20px;
-          img {
-            height: 35px;
-          }
         }
       }
       .login-btn {
@@ -123,5 +132,57 @@ header {
         }
       }
     }
+  }
+}
+
+.profile-menu {
+  &.hidden {
+    display: none;
+  }
+  background-color: $headerColor;
+  padding: 20px 0;
+  width: 270px;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  border: 1px solid $borderColor;
+  border-top: none;
+  border-radius: 1px;
+  .menu-column {
+    display: flex;
+    padding: 0 15px;
+    color: white;
+    &.opt {
+      padding: 0;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 15px;
+      a {
+        &:hover {
+          background-color: $gray;
+        }
+        padding: 20px;
+        flex-grow: 1;
+        i {
+          font-size: 20px;
+          margin-right: 20px;
+        }
+      }
+    }
+    .menu-me {
+      margin-left: 20px;
+      span {
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .menu-link {
+        color: $blue;
+        display: block;
+        margin: 20px 0;
+      }
+    }
+  }
+  .menu-divider {
+    border-top: 1px solid $borderColor;
   }
 }

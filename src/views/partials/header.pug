@@ -16,12 +16,31 @@ header
                     a(href=`/videos${routes.UPLOAD_VIDEO}`)
                         i.fas.fa-video.header-icons
                 li 
-                    a(href=`/users${routes.PROFILE(loggedUser._id)}`).header-profile.header-icons
+                    button.header-profile.header-icons
                         .profile-img
                             if loggedUser.avatar
                                     img(src=loggedUser.avatar)
                             else
                                 span=loggedUser.name.substring(0, 1)
+                .profile-menu.hidden
+                    .menu-column.header-profile
+                        .profile-img.big
+                            if loggedUser.avatar
+                                    img(src=loggedUser.avatar)
+                            else
+                                span=loggedUser.name.substring(0, 1)
+                        .menu-me
+                            span=loggedUser.name
+                            a(href=`/users/${routes.USER_EDIT}`).menu-link 프로필 수정
+                    .menu-divider
+                    .menu-column.opt
+                        a(href=`/users/${routes.PROFILE(loggedUser._id)}`)
+                            i.fas.fa-id-card-alt
+                            span 내 채널
+                    .menu-column.opt
+                        a(href=routes.LOGOUT)
+                            i.fas.fa-sign-out-alt
+                            span 로그아웃
             else
                 li 
                     button.header-menu
