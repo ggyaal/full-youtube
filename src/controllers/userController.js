@@ -2,6 +2,7 @@ import bcrypt from "bcrypt";
 import User from "../models/User";
 import fetch from "node-fetch";
 import routes from "../routes";
+import { deleteObjectFormS3 } from "../middlewares";
 
 export const getLogin = (req, res) => res.render("login");
 
@@ -152,5 +153,31 @@ export const user = async (req, res) => {
 
   return res.render("user", { user });
 };
-export const edit = (req, res) => res.render("edit");
+
+export const getEdit = (req, res) => res.render("edit");
+export const postEdit = async (req, res) => {
+  const {
+    body: { name },
+    file,
+    session: { user },
+  } = req;
+  let isAvatarUpdate = true;
+
+  if (user.avatar && !file?.location) {
+    isAvatarUpdate = false;
+  }
+
+  const updatedUser = await User.findByIdAndUpdate(user._id, {
+    name,
+    avatar: file?.location || user.avatar,
+  });
+
+  if (updatedUser && isAvatarUpdate && user.avatar) {
+    deleteObjectFormS3("avatars", user.avatar.split("/avatars/")[1]);
+  }
+
+  req.session.user.avatar = file?.location || user.avatar;
+  req.session.user.name = name || user.name;
+  return res.redirect(routes.HOME);
+};
 export const remove = (req, res) => res.render("delete");

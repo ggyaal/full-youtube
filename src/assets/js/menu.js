@@ -1,4 +1,4 @@
-const profile = document.querySelector(".header-profile");
+const profile = document.getElementById("headerProfile");
 const menubar = document.querySelector(".profile-menu");
 
 const HIDDEN = "hidden";

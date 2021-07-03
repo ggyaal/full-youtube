@@ -92,28 +92,6 @@ header {
       }
       .header-profile {
         display: flex;
-        .profile-img {
-          img {
-            height: 35px;
-          }
-          width: 35px;
-          height: 35px;
-          &.big {
-            img {
-              height: 45px;
-            }
-            width: 45px;
-            height: 45px;
-            font-size: 30px;
-          }
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          overflow: hidden;
-          border-radius: 50%;
-          background-color: $blue;
-          font-size: 20px;
-        }
       }
       .login-btn {
         display: flex;
@@ -139,6 +117,7 @@ header {
   &.hidden {
     display: none;
   }
+  z-index: 10;
   background-color: $headerColor;
   padding: 20px 0;
   width: 270px;
@@ -185,4 +164,29 @@ header {
   .menu-divider {
     border-top: 1px solid $borderColor;
   }
+}
+
+.profile-img {
+  img {
+    height: 35px;
+    width: 35px;
+  }
+  width: 35px;
+  height: 35px;
+  &.big {
+    img {
+      height: 45px;
+      width: 45px;
+    }
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: $blue;
+  font-size: 20px;
 }

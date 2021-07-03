@@ -16,7 +16,7 @@ header
                     a(href=`/videos${routes.UPLOAD_VIDEO}`)
                         i.fas.fa-video.header-icons
                 li 
-                    button.header-profile.header-icons
+                    button.header-profile.header-icons#headerProfile
                         .profile-img
                             if loggedUser.avatar
                                     img(src=loggedUser.avatar)
@@ -31,7 +31,7 @@ header
                                 span=loggedUser.name.substring(0, 1)
                         .menu-me
                             span=loggedUser.name
-                            a(href=`/users/${routes.USER_EDIT}`).menu-link 프로필 수정
+                            a(href=`/users${routes.USER_EDIT}`).menu-link 프로필 수정
                     .menu-divider
                     .menu-column.opt
                         a(href=`/users/${routes.PROFILE(loggedUser._id)}`)
@@ -50,6 +50,5 @@ header
                         .login-btn
                             i.fas.fa-user-circle
                             | 로그인
-                //-     a(href=routes.JOIN) Join
-                //- li 
-                //-     a(href=routes.LOGIN) login
+if loggedIn
+    script(src="/static/js/menu.js") 

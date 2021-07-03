@@ -1,4 +1,18 @@
 extends layouts/main
 
 block main
-    h1 user edit
+    .login-container
+        .login-wrapper
+            if err
+                .login-err=err
+            .profile-img.big#editAvatarContainer
+                if loggedUser.avatar
+                        img(src=loggedUser.avatar)#editAvatar
+                else
+                    span=loggedUser.name.substring(0, 1)
+            br
+            form(method="POST", enctype="multipart/form-data")
+                input(type="file", name="avatar", accept="image/*")#avatarFile
+                input(type="text", name="name", placeholder="변경할 이름", value=loggedUser.name)
+                button 수정하기
+    script(src="/static/js/editProfile.js") 
