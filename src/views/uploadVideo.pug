@@ -1,9 +1,13 @@
 extends layouts/main
 
 block main
-    h1 uploaded video
-    form(method="POST")
-        input(type="text", name="fileUrl", placeholder="fileUrl", required)
-        input(type="text", name="title", placeholder="title", required)
-        input(type="text", name="description", placeholder="description")
-        input(type="submit", value="upload")
+    .form-container
+        .form-wrapper
+            .preview
+                video#previewVideo
+            form(method="POST", enctype="multipart/form-data")
+                input(type="file", name="videoFile", placeholder="파일", accept="video/*", required)#videoFile
+                input(type="text", name="title", placeholder="제목", required)
+                input(type="text", name="description", placeholder="설명")
+                button 업로드
+    script(src="/static/js/uploadPreview.js") 

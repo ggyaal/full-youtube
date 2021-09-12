@@ -6,6 +6,7 @@ module.exports = {
     main: "./src/assets/js/main.js",
     menu: "./src/assets/js/menu.js",
     editProfile: "./src/assets/js/editProfile.js",
+    uploadPreview: "./src/assets/js/uploadPreview.js",
   },
   mode: "development",
   watch: true,
