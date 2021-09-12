@@ -19,14 +19,14 @@ header
                     button.header-profile.header-icons#headerProfile
                         .profile-img
                             if loggedUser.avatar
-                                    img(src=loggedUser.avatar)
+                                    img(src=loggedUser.avatar, crossorigin)
                             else
                                 span=loggedUser.name.substring(0, 1)
                 .profile-menu.hidden
                     .menu-column.header-profile
                         .profile-img.big
                             if loggedUser.avatar
-                                    img(src=loggedUser.avatar)
+                                    img(src=loggedUser.avatar, crossorigin)
                             else
                                 span=loggedUser.name.substring(0, 1)
                         .menu-me

@@ -12,18 +12,20 @@ export const getUploadVideo = (req, res) => res.render("uploadVideo");
 
 export const postUploadVideo = async (req, res) => {
   const {
-    body: { title, description, fileUrl },
+    body: { title, description },
+    file: { location },
   } = req;
+
   try {
     await Video.create({
       title,
       description,
-      fileUrl,
+      fileUrl: location,
     });
-    res.redirect("/");
   } catch (error) {
     console.log(error);
   }
+  res.redirect("/");
 };
 
 export const deleteVideo = (req, res) => res.render("deleteVideo");

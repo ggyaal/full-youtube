@@ -13,9 +13,14 @@
     justify-content: center;
     align-items: center;
     .preview {
-      border-radius: 3px;
+      border-radius: 5px;
+      flex-basis: 0;
+      flex-grow: 1.2;
+      overflow: hidden;
     }
     form {
+      flex-basis: 0;
+      flex-grow: 1;
       color: white;
       display: flex;
       width: 40%;

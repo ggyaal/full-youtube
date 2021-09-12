@@ -29,6 +29,12 @@ app.use(localsware);
 
 app.use("/static", express.static("static"));
 
+app.use((_, res, next) => {
+  res.header("Cross-Origin-Opener-Policy", "same-origin");
+  res.header("Cross-Origin-Embedder-Policy", "require-corp");
+  next();
+});
+
 app.use("/", rootRouter);
 app.use("/users", userRouter);
 app.use("/videos", videoRouter);
